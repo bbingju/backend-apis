@@ -1,0 +1,15 @@
+syntax="proto2";
+
+package wirepas.proto.gateway_api;
+
+import "wp_global.proto";
+
+
+message UpgradeFirmwareReq {
+    required RequestHeader header = 1;
+    required string url = 2;
+}
+
+message UpgradeFirmwareResp {
+    required ResponseHeader header = 1;
+}
