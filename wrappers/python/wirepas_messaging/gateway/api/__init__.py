@@ -25,3 +25,4 @@ from .gateway_result_code import *
 from .otap_helper import *
 from .wirepas_exceptions import *
 from .upgrade_firmware import *
+from .get_wifi_config import *

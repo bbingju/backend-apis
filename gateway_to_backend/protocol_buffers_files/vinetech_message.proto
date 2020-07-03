@@ -1,7 +1,6 @@
 syntax="proto2";
 
 package wirepas.proto.gateway_api;
-
 import "wp_global.proto";
 
 
@@ -11,5 +10,53 @@ message UpgradeFirmwareReq {
 }
 
 message UpgradeFirmwareResp {
+    required ResponseHeader header = 1;
+}
+
+message WifiConnectionConfig {
+    required string ssid = 1;
+    optional string password = 2;
+}
+
+message MqttConnectionConfig {
+    required string uri = 1;
+    required uint32 port = 2;
+    optional string username = 3;
+    optional string password = 4;
+}
+
+message GetWifiConfigReq {
+    required RequestHeader header = 1;
+}
+
+message GetWifiConfigResp {
+    required ResponseHeader header = 1;
+    required WifiConnectionConfig wifi_connection_config = 2;
+}
+
+message SetWifiConfigReq {
+    required RequestHeader header = 1;
+    required WifiConnectionConfig wifi_connection_config = 2;
+}
+
+message SetWifiConfigResp {
+    required ResponseHeader header = 1;
+}
+
+message GetMqttConfigReq {
+    required RequestHeader header = 1;
+}
+
+message GetMqttConfigResp {
+    required ResponseHeader header = 1;
+    required MqttConnectionConfig mqtt_connection_config = 2;
+}
+
+message SetMqttConfigReq {
+    required RequestHeader header = 1;
+    required MqttConnectionConfig mqtt_connection_config = 2;
+}
+
+message SetMqttConfigResp {
     required ResponseHeader header = 1;
 }
